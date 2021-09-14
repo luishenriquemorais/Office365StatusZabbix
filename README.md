@@ -11,7 +11,7 @@ Para verificarmos o status dos serviços basta acessar a URL: https://portal.off
 
 <hr size="10" width="100%">
 
-Porem precisamos verificar a URL que esta página consome, para isto, clique com o botão direito em <b>Inspecionar</b> e depois aperte <b>F5</b> para que a página volte a carregar.
+Porem precisamos verificar a URL que esta página consome, para isto, clique com o botão direito em <b>Inspecionar</b>, clique em Network e depois aperte <b>F5</b> para que a página volte a carregar.
 
 
 <p align="center">
