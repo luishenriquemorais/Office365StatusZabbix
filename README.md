@@ -2,5 +2,5 @@
 
 
 <p align="center">
-	<img src="images/ZabbixSN1.2.PNG">
+	<img src="src/images/Office365StatusZabbix1.0.png">
 </p>
