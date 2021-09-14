@@ -1,4 +1,4 @@
-# Office365StatusZabbix
+# Status do Office 365 no Zabbix
 Monitorar o status dos serviços do Office 365 com o Zabbix.
 
 <hr size="10" width="100%">
