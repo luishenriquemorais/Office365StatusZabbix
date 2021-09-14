@@ -78,7 +78,7 @@ O retorno é todas as posições name dentro do Array Services.
 <hr size="10" width="100%">
 	
 Uma forma de pegar apenas um item em vez do array todo é selecionar a posição dele dentro do Array, desta forma basta passar a posição dele dentro do syntax.<br>
-<b>$.Services..[0]Name</b><br>
+<b>$.Services..[0].Name</b><br>
 Neste caso o retorno é apenas <b>Outlook.com</b> dentro do Array Services.
 
 	
@@ -88,7 +88,7 @@ Neste caso o retorno é apenas <b>Outlook.com</b> dentro do Array Services.
 
 <hr size="10" width="100%">
 
-<b>$.Services..[1]Name</b><br>
+<b>$.Services..[1].Name</b><br>
 Neste caso o retorno é apenas <b>OneDrive</b> dentro do Array Services.
 
 <p align="center">
@@ -98,7 +98,7 @@ Neste caso o retorno é apenas <b>OneDrive</b> dentro do Array Services.
 <hr size="10" width="100%">
 
 E caso queira verificar se ele está Up ou não basta filtrar no syntax apenas o <b>IsUp</b><br>
-<b>$.Services..[1]IsUp</b><br>
+<b>$.Services..[1].IsUp</b><br>
 Neste caso o retorno é apenas o status do <b>OneDrive</b> (true) dentro do Array Services.
 
 <p align="center">
