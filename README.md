@@ -88,7 +88,7 @@ Neste caso o retorno é apenas <b>Outlook.com</b> dentro do Array Services.
 
 <hr size="10" width="100%">
 
-<b>$.Services..[1]Name</b>
+<b>$.Services..[1]Name</b><br>
 Neste caso o retorno é apenas <b>OneDrive</b> dentro do Array Services.
 
 <p align="center">
@@ -97,8 +97,8 @@ Neste caso o retorno é apenas <b>OneDrive</b> dentro do Array Services.
 
 <hr size="10" width="100%">
 
-E caso queira verificar se ele está Up ou não basta filtrar no syntax apenas o <b>IsUp</b>
-<b>$.Services..[1]IsUp</b>
+E caso queira verificar se ele está Up ou não basta filtrar no syntax apenas o <b>IsUp</b><br>
+<b>$.Services..[1]IsUp</b><br>
 Neste caso o retorno é apenas o status do <b>OneDrive</b> (true) dentro do Array Services.
 
 <p align="center">
@@ -116,11 +116,11 @@ Criamos um host chamado <b>Office 365 Status</b>.
 
 <hr size="10" width="100%">
 
-Vamos explicar a criação dos itens exemplificando o item <b>Outlook</b>.
-<b>Name</b> -> Outlook.com
-<b>Type</b> -> HTTP agent
-<b>Key</b> -> outlook
-<b>URL</b> -> https://portal.office.com/api/servicestatus/index
+Vamos explicar a criação dos itens exemplificando o item <b>Outlook</b>.<br>
+<b>Name</b> -> Outlook.com <br>
+<b>Type</b> -> HTTP agent <br>
+<b>Key</b> -> outlook <br>
+<b>URL</b> -> https://portal.office.com/api/servicestatus/index <br>
 
 <p align="center">
 	<img src="src/images/Office365StatusZabbix1.12.png">
@@ -128,9 +128,9 @@ Vamos explicar a criação dos itens exemplificando o item <b>Outlook</b>.
 
 <hr size="10" width="100%">
 
-E em Preprocessing devemos adicionar dois steps.
-O primeiro é <b>JSONPath</b>.
-Com o parâmetro $.Services.[0].IsUp (É o valor de up ou dão do Outlook (Posição 0 do Array Services)).
+E em Preprocessing devemos adicionar dois steps. <br>
+O primeiro é <b>JSONPath</b>. <br>
+Com o parâmetro $.Services.[0].IsUp (É o valor de up ou dão do Outlook (Posição 0 do Array Services)). <br>
 
 <p align="center">
 	<img src="src/images/Office365StatusZabbix1.13.png">
@@ -139,15 +139,15 @@ Com o parâmetro $.Services.[0].IsUp (É o valor de up ou dão do Outlook (Posi�
 <hr size="10" width="100%">
 
 
-E o segundo step é <b>JavaScript</b> para transformar o texto true em um número para facilitar na criação de triggers.
-O script é esse:
+E o segundo step é <b>JavaScript</b> para transformar o texto true em um número para facilitar na criação de triggers. <br>
+O script é esse: <br>
 
-if (/true/.test(value)) {
-    return(1)
-}else{
-      return(0)
-  }
-}
+if (/true/.test(value)) { <br>
+    return(1) <br>
+}else{ <br>
+      return(0) <br>
+  } <br>
+} <br>
 
 <p align="center">
 	<img src="src/images/Office365StatusZabbix1.14.png">
