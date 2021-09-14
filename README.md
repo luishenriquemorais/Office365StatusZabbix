@@ -77,8 +77,8 @@ O retorno é todas as posições name dentro do Array Services.
 
 <hr size="10" width="100%">
 	
-Uma forma de pegar apenas um item em vez do array todo é selecionar a posição dele dentro do Array, desta forma basta passar a posição dele dentro do syntax.
-<b>$.Services..[0]Name</b>
+Uma forma de pegar apenas um item em vez do array todo é selecionar a posição dele dentro do Array, desta forma basta passar a posição dele dentro do syntax.<br>
+<b>$.Services..[0]Name</b><br>
 Neste caso o retorno é apenas <b>Outlook.com</b> dentro do Array Services.
 
 	
