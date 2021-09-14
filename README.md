@@ -1,2 +1,6 @@
 # Office365StatusZabbix
-Status of the Office 365 with Zabbix
+
+
+<p align="center">
+	<img src="images/ZabbixSN1.2.PNG">
+</p>
