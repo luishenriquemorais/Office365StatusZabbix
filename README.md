@@ -107,7 +107,7 @@ Neste caso o retorno é apenas o status do <b>OneDrive</b> (true) dentro do Arra
 
 <hr size="10" width="100%">
 
-Com essas informações agora podemos montar os sensores no Zabbix.
+Com essas informações agora podemos montar os sensores no Zabbix.<br>
 Criamos um host chamado <b>Office 365 Status</b>.
 
 <p align="center">
