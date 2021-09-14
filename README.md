@@ -67,7 +67,7 @@ Copie o resultado já formatado.
 <hr size="10" width="100%">
 
 Cole no JSON Path http://jsonpath.com/ e na syntax veja como parsear somente o que desejar. Neste caso iremos parsear apenas os nomes.
-<b>$.Services..Name</b>
+<b>$.Services..Name</b><br>
 O retorno é todas as posições name dentro do Array Services.
 
 
@@ -78,8 +78,8 @@ O retorno é todas as posições name dentro do Array Services.
 <hr size="10" width="100%">
 	
 Uma forma de pegar apenas um item em vez do array todo é selecionar a posição dele dentro do Array, desta forma basta passar a posição dele dentro do syntax.
-<b>$.Services..[1]Name</b>
-Neste caso o retorno é apenas <b>OneDrive</b> dentro do Array Services.
+<b>$.Services..[0]Name</b>
+Neste caso o retorno é apenas <b>Outlook.com</b> dentro do Array Services.
 
 	
 <p align="center">
@@ -88,10 +88,8 @@ Neste caso o retorno é apenas <b>OneDrive</b> dentro do Array Services.
 
 <hr size="10" width="100%">
 
-E caso queira verificar se ele está Up ou não basta filtrar no syntax apenas o <b>IsUp</b>
-<b>$.Services..[1]IsUp</b>
-Neste caso o retorno é apenas o status do <b>OneDrive</b> (true) dentro do Array Services.
-
+<b>$.Services..[1]Name</b>
+Neste caso o retorno é apenas <b>OneDrive</b> dentro do Array Services.
 
 <p align="center">
 	<img src="src/images/Office365StatusZabbix1.9.png">
@@ -99,12 +97,21 @@ Neste caso o retorno é apenas o status do <b>OneDrive</b> (true) dentro do Arra
 
 <hr size="10" width="100%">
 
-Com essas informações agora podemos montar os sensores no Zabbix.
-Criamos um host chamado <b>Office 365 Status</b>.
-
+E caso queira verificar se ele está Up ou não basta filtrar no syntax apenas o <b>IsUp</b>
+<b>$.Services..[1]IsUp</b>
+Neste caso o retorno é apenas o status do <b>OneDrive</b> (true) dentro do Array Services.
 
 <p align="center">
 	<img src="src/images/Office365StatusZabbix1.10.png">
+</p>
+
+<hr size="10" width="100%">
+
+Com essas informações agora podemos montar os sensores no Zabbix.
+Criamos um host chamado <b>Office 365 Status</b>.
+
+<p align="center">
+	<img src="src/images/Office365StatusZabbix1.11.png">
 </p>
 
 <hr size="10" width="100%">
@@ -115,9 +122,8 @@ Vamos explicar a criação dos itens exemplificando o item <b>Outlook</b>.
 <b>Key</b> -> outlook
 <b>URL</b> -> https://portal.office.com/api/servicestatus/index
 
-
 <p align="center">
-	<img src="src/images/Office365StatusZabbix1.11.png">
+	<img src="src/images/Office365StatusZabbix1.12.png">
 </p>
 
 <hr size="10" width="100%">
@@ -126,12 +132,12 @@ E em Preprocessing devemos adicionar dois steps.
 O primeiro é <b>JSONPath</b>.
 Com o parâmetro $.Services.[0].IsUp (É o valor de up ou dão do Outlook (Posição 0 do Array Services)).
 
-
 <p align="center">
-	<img src="src/images/Office365StatusZabbix1.12.png">
+	<img src="src/images/Office365StatusZabbix1.13.png">
 </p>
 
 <hr size="10" width="100%">
+
 
 E o segundo step é <b>JavaScript</b> para transformar o texto true em um número para facilitar na criação de triggers.
 O script é esse:
@@ -143,19 +149,11 @@ if (/true/.test(value)) {
   }
 }
 
-
-<p align="center">
-	<img src="src/images/Office365StatusZabbix1.13.png">
-</p>
-
-<hr size="10" width="100%">
-
-Feito tudo isso o monitoramento estará completo e respondendo!
-
-
 <p align="center">
 	<img src="src/images/Office365StatusZabbix1.14.png">
 </p>
+
+Feito tudo isso o monitoramento estará completo e respondendo!
 
 <p align="center">
 	<img src="src/images/Office365StatusZabbix1.15.png">
