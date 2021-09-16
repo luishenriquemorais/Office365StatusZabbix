@@ -20,8 +20,8 @@ Porem precisamos verificar a URL que esta página consome, para isto, clique com
 
 <hr size="10" width="100%">
 
-Com isso veremos uma item chamado <b>index</b> não <b>index.html</b>.
-Clique em cima dele com o botão direito e logo após emcima de <b>Copy</b> e depois em <b>Copy link address</b>
+Com isso veremos um item chamado <b>index</b> não <b>index.html</b>.
+Clique em cima dele com o botão direito e logo após em cima de <b>Copy</b> e depois em <b>Copy link address</b>
 
 
 <p align="center">
